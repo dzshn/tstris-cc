@@ -1,0 +1,19 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "eol-last": ["error", "always"],
+        "eqeqeq": ["error", "always", { "null": "ignore" }],
+        "linebreak-style": ["error", "unix"],
+        "no-duplicate-imports": "error",
+        "no-self-compare": "error",
+        "no-trailing-spaces": "error",
+        "no-var": "error",
+        "prefer-const": "error"
+    }
+}

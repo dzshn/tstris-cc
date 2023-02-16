@@ -1,0 +1,36 @@
+{
+    "name": "tstris-cc",
+    "version": "0.1.0",
+    "description": "Tetris clone for ComputerCraft",
+    "keywords": [],
+    "homepage": "https://github.com/dzshn/tstris-cc",
+    "license": "GPL-3.0",
+    "author": {
+        "name": "dzshn",
+        "url": "https://dzshn.xyz",
+        "email": "me@dzshn.xyz"
+    },
+    "funding": [
+        "https://github.com/sponsors/dzshn",
+        "https://ko-fi.com/dzshn"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dzshn/tstris-cc"
+    },
+    "private": true,
+    "packageManager": "pnpm@^7",
+    "scripts": {
+        "build": "tstl"
+    },
+    "devDependencies": {
+        "@jackmacwindows/craftos-types": "^1.1.1",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
+        "dprint": "^0.34.5",
+        "eslint": "^8.34.0",
+        "lua-types": "^2.13.1",
+        "typescript": "^4.9.5",
+        "typescript-to-lua": "^1.13.0"
+    }
+}
