@@ -1,4 +1,4 @@
-import { Move, Tetris } from "./tetris";
+import { Move, PieceType, Tetris } from "./tetris";
 
 const moves = {
     [keys.w]: Move.hardDrop(),
@@ -13,13 +13,39 @@ const moves = {
     [keys.q]: Move.swap(),
 };
 
+const pieceColours = {
+    [PieceType.I]: colours.cyan,
+    [PieceType.J]: colours.orange,
+    [PieceType.L]: colours.blue,
+    [PieceType.O]: colours.yellow,
+    [PieceType.S]: colours.green,
+    [PieceType.T]: colours.purple,
+    [PieceType.Z]: colours.red,
+};
+
 const game = new Tetris();
 let renderTimer = os.startTimer(1 / 30);
 
 function render(): void {
+    const [cols, rows] = term.getSize();
     term.setCursorPos(1, 1);
     term.clear();
-    term.write("meow meow");
+
+    for (const [i, row] of ipairs(game.getPlayfield(rows))) {
+        term.setCursorPos(Math.floor(cols / 2 - game.width), i);
+        for (const tile of row) {
+            if (tile === 0) {
+                term.setTextColour(colours.grey);
+                term.write(". ");
+            } else if (tile === 8) {
+                term.setTextColour(colours.lightGrey);
+                term.write("@ ");
+            } else {
+                term.setTextColour(pieceColours[tile]);
+                term.write("[]");
+            }
+        }
+    }
 }
 
 for (;;) {
@@ -32,9 +58,6 @@ for (;;) {
         render();
     } else if (event === "key") {
         const key = args[0];
-        if (key === keys.q)
-            break;
-
         if (key === keys.p)
             game.pause();
 
@@ -42,5 +65,14 @@ for (;;) {
             game.push(moves[key]);
 
         render();
+    } else if (event === "key_up") {
+        const key = args[0];
+        if (key === keys.c) {
+            term.clear();
+            term.setCursorPos(1, 1);
+            term.setTextColor(colours.white);
+            print(":3");
+            break;
+        }
     }
 }

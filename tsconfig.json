@@ -14,6 +14,8 @@
         "noImplicitSelf": true,
         "noHeader": true,
         "luaLibImport": "require-minimal",
+        "luaBundle": "tstris.lua",
+        "luaBundleEntry": "src/index.ts",
     },
     "include": ["src/**/*.ts"]
 }
