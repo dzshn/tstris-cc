@@ -118,6 +118,7 @@ function render(): void {
         term.setBackgroundColour(colours.black);
     }
 
+    term.setTextColor(colours.black);
     term.setBackgroundColour(colours.white);
     for (let i = 2; i < 16; i++)
         addStrAt(rightSide + 6, topSide + i, " \x7f", null, null);

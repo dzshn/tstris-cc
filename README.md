@@ -1,3 +1,11 @@
 # tstris-cc
 
-DT Cannon ur friends in minecraft (real) (just kidding theres no multiplayer (yet (soon???)))
+TypoScript Tetris clone for ComputerCraft
+
+![screenshot](screenshot.png)
+
+## Features
+
+- You can DT cannon in Minecraft.
+
+multiplayer over rednet soontm
